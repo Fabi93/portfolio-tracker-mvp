@@ -7,7 +7,7 @@ Dieses Repo ist die **Hausaufgabe für den gemeinsamen Workshop**. Es zeigt ein 
 ## Was ist schon fertig (Hausaufgabe)
 
 - 📄 **PRD** → [`docs/PRD.md`](docs/PRD.md)
-- 🤖 **Agentisches Setup erklärt** → [`docs/agentic-setup.md`](docs/agentic-setup.md) (Pipeline-Diagramm, Rollen, Human-Gates)
+- 🤖 **Agentisches Setup erklärt** → [`.claude/ai-pipeline/agentic-setup.md`](.claude/ai-pipeline/agentic-setup.md) (Pipeline-Diagramm, Rollen, Human-Gates)
 - ✅ **Refinement für US1–US3** (Stufe 1) → [`docs/refinement/`](docs/refinement/) — Tickets + Akzeptanzkriterien, Acceptance-Test-Specs, Backend-/Frontend-Plan, Compliance & Security, Definition of Ready
 - 🌱 **Buildbarer Seed:** Spring-Boot-Backend (Clean Architecture, Domänen-Logik als TODO für die Live-Delivery) + Angular-Frontend-Scaffold
 - 🧪 **Test-First:** die Acceptance-Tests für US2/US3 liegen als `@Disabled`-JUnit-Tests bereit — im Workshop aktivieren (rot) und grün implementieren
@@ -16,13 +16,15 @@ Dieses Repo ist die **Hausaufgabe für den gemeinsamen Workshop**. Es zeigt ein 
 
 ```
 .
-├── .claude/            # das agentische Setup (Agents + Skills) — reist mit dem Repo
-│   ├── agents/         # product-owner, qa-tester, backend-/frontend-developer, compliance, security, orchestrators
-│   └── skills/         # define-tickets, write-acceptance-tests, implement-backend/-frontend, run-scans, …
-├── docs/
+├── .claude/            # DIE AI-PIPELINE (reist mit dem Repo) — nicht projektspezifisch
+│   ├── CLAUDE.md        # Team-Constitution (geteilte, auto-geladene Regeln)
+│   ├── agents/          # Rollen-Agenten (PO, QA, BE/FE-Dev, Compliance, Security, Orchestratoren)
+│   ├── skills/          # Methodik-Skills (define-tickets, implement-backend/-frontend, run-scans, …)
+│   └── ai-pipeline/     # Pipeline-Doku: agentic-setup.md + Referenz-Docs (VISION, STRATEGIE,
+│                        #   REFINEMENT, DELIVERY, DEFINITION_OF_DONE, READY-TICKET-TEMPLATE)
+├── docs/               # PROJEKT-INHALT
 │   ├── PRD.md
-│   ├── agentic-setup.md
-│   └── refinement/     # Stufe-1-Ergebnisse für US1–US3
+│   └── refinement/      # Stufe-1-Ergebnisse (Pipeline-Output) für US1–US3
 ├── backend/            # Spring Boot 3 / Java 21 (Maven)
 └── frontend/           # Angular 22
 ```

@@ -11,10 +11,10 @@ description: Haupt-Agent der Refinement-Stufe. Routet ein freigegebenes Roadmap-
 > Subagenten die `CLAUDE.md` erben.
 
 ## Mission
-Aus einem Roadmap-„Now"-Item **reife, umsetzbare Tickets** machen — koordiniert über die Rollen-Agenten, **mit dem Menschen an den Gates**. Vollständige Design-Referenz: `~/.claude/ai-pipeline/REFINEMENT.md`.
+Aus einem Roadmap-„Now"-Item **reife, umsetzbare Tickets** machen — koordiniert über die Rollen-Agenten, **mit dem Menschen an den Gates**. Vollständige Design-Referenz: `.claude/ai-pipeline/REFINEMENT.md`.
 
 ## Scope & Grenzen (bewusst eng)
-- ✅ Routing · Loop · Gates · Eskalation · Loop-Leitplanken · Ticket-Assembly (Template `~/.claude/ai-pipeline/READY-TICKET-TEMPLATE.md`).
+- ✅ Routing · Loop · Gates · Eskalation · Loop-Leitplanken · Ticket-Assembly (Template `.claude/ai-pipeline/READY-TICKET-TEMPLATE.md`).
 - ❌ **Nicht:** die Fachinhalte selbst erzeugen (das tun die Rollen), Implementierung, Entscheidungen an den Gates treffen (das tut der Mensch).
 
 ## Kernregel — NICHT autonom
