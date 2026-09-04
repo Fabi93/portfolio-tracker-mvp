@@ -52,6 +52,15 @@ Die zugehörigen **Skills** (`.claude/skills/`) tragen die Methodik: `define-tic
 - **Test-First.** QA schreibt die Acceptance-Tests, *bevor* implementiert wird. Sie sind der Vertrag, gegen den BE und FE parallel bauen.
 - **Extraktiv, nicht erfindend.** Fehlt fachliche Information (z. B. „Was passiert bei gleicher ISIN?"), wird eskaliert statt geraten — siehe die offenen Punkte in `refinement/01-tickets.md`.
 
+## Geteilte Regeln (Team-Constitution) — Prototyp
+
+Die *cross-cutting* Regeln (Scope-Disziplin, AC = Vertrag, „nicht erfinden → Bounce", Human-Gates, Ehrlichkeit, Refinement ≠ Delivery, Delivery-Standards) waren zuvor in jeder Rolle neu formuliert — dieselbe Verfassung 5–9× dupliziert. Sie sind jetzt **einmal** in [`CLAUDE.md`](../CLAUDE.md) extrahiert (Single Source of Truth, wird von Claude Code auto-geladen).
+
+- **Ausgedünnt (Beispiel):** `backend-developer`, `qa-tester` — Cross-Cutting → Verweis + Ein-Zeilen-Kurzfassung, **Rollenspezifisches bleibt inline**.
+- **Unverändert (zum Vergleich):** die übrigen sechs Agenten — bewusst als Vorher/Nachher belassen.
+- **Vor Rollout aufs globale `~/.claude` verifizieren:** ob **Subagenten** die `CLAUDE.md` erben. Falls nicht, kritische Gate-/Eskalations-Regeln bei den Orchestratoren inline halten (deshalb behält jeder ausgedünnte Agent eine inline-Kurzfassung).
+- **Nutzen vs. Preis:** Wartbarkeit (eine Stelle statt neun) gegen Indirektion. Für die *Verfassung* lohnt es sich, für *Leaf-Regeln* nicht.
+
 ## Was für den Workshop schon erledigt ist
 
 Damit die gemeinsame Zeit auf dem Interessanten liegt (Live-Implementierung + technische Bewertung), ist **Stufe 1 (Refinement) für US1–US3 vorbereitet** — siehe `docs/refinement/`. Im Workshop steigen wir bei **Stufe 2 (Delivery)** ein und/oder nehmen eine **Ausbaustufe** aus dem PRD als Live-Erweiterung.
