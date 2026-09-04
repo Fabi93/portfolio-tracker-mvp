@@ -33,4 +33,4 @@ Ein Ticket ist **fertig**, wenn:
 
 **Refinement-Zeit vs. Delivery-Zeit:** Die *Anforderungen* (Security-Tests, Perf-Ziele, Compliance-Review, AC) entstehen im **Refinement**. Die *Nachweise* (Tests grün, Scans grün) werden beim **Delivery/Review** geprüft.
 
-**Fabians Calls (v1):** min. 1 Acceptance Test · Split bei fachlichem UND/ODER · Security + Compliance + Performance + Scans als Pflicht-Tore.
+**Kern-Tore (v1):** min. 1 Acceptance Test · Split bei fachlichem UND/ODER · Security + Compliance + Performance + Scans als Pflicht-Tore.

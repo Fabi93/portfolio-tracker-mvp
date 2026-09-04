@@ -13,7 +13,7 @@ Definiert die **sicherheitsrelevanten Tests & Anforderungen** eines Tickets. Die
 Ein Ticket mit AC (Skill `define-tickets`).
 
 ## Prozess — Bedrohungsbetrachtung
-1. **AuthN/AuthZ:** wer darf diese Aktion? Multi-Tenant-Isolation (Zugriff nur auf eigenen Standort/Verband)?
+1. **AuthN/AuthZ:** wer darf diese Aktion? Multi-Tenant-Isolation (Zugriff nur auf eigene Daten / den eigenen Mandanten)?
 2. **Input-Validierung / Injection:** SQL/NoSQL/Command-Injection, XSS, Massenzuweisung.
 3. **Datenexposition:** werden zu viele Felder ausgegeben? Sensible Daten geloggt?
 4. **Rate-Limiting / Missbrauch** sensibler Endpunkte.

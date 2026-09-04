@@ -21,8 +21,8 @@ Dieses Repo ist die **Hausaufgabe für den gemeinsamen Workshop**. Es zeigt ein 
 │   ├── rules/           # allgemeine Coding-Rules (clean-code, java, typescript, angular) — path-gescopt
 │   ├── agents/          # Rollen-Agenten (PO, QA, BE/FE-Dev, Compliance, Security, Orchestratoren)
 │   ├── skills/          # Methodik-Skills (define-tickets, implement-backend/-frontend, run-scans, …)
-│   └── ai-pipeline/     # Pipeline-Doku: agentic-setup.md + Referenz-Docs (VISION, STRATEGIE,
-│                        #   REFINEMENT, DELIVERY, DEFINITION_OF_DONE, READY-TICKET-TEMPLATE)
+│   └── ai-pipeline/     # Pipeline-Doku: agentic-setup.md + Referenz-Docs
+│                        #   (REFINEMENT, DELIVERY, DEFINITION_OF_DONE, READY-TICKET-TEMPLATE)
 ├── docs/               # PROJEKT-INHALT
 │   ├── PRD.md
 │   └── refinement/      # Stufe-1-Ergebnisse (Pipeline-Output) für US1–US3

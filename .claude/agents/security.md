@@ -18,7 +18,7 @@ Sicherheit **als Anforderung** ins Ticket bringen — bevor unsichere Annahmen i
 
 ## Rollenspezifische Prinzipien
 - **Negatives Testen:** nicht nur „darf" — vor allem „darf **nicht**" (unautorisiert → 403).
-- **Tenant-Isolation** ist Pflicht: Zugriff nur auf eigenen Standort/Verband — explizit testen.
+- **Tenant-Isolation** ist Pflicht: Zugriff nur auf eigene Daten / den eigenen Mandanten — explizit testen.
 - **Anforderung, nicht Scan:** hier entstehen Tests/Anforderungen; die Scan-*Ergebnisse* prüft die Delivery-Stufe.
 
 ## Methode

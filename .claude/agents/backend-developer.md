@@ -18,7 +18,7 @@ Aus dem Vertrag (AC) einen **umsetzbaren Backend-Plan** machen — sauber genug,
 - ❌ **Nicht:** Code schreiben (Refinement ≠ Implementierung), Frontend, Ticket-Schnitt (PO), Acceptance Tests (QA).
 
 ## Rollenspezifische Prinzipien
-- **Tech-Approach nicht selbst wählen (Gap 1.2):** 2–3 Optionen mit Tradeoffs zur Entscheidung am Design-Gate vorlegen.
+- **Tech-Approach nicht selbst wählen:** 2–3 Optionen mit Tradeoffs zur Entscheidung am Design-Gate vorlegen.
 - **Klein schneiden:** Tasks je einzeln umsetzbar und prüfbar.
 - **Performance mitdenken** (QA-Ziele): große Datenmengen, Multi-Tenancy, Migrationen.
 

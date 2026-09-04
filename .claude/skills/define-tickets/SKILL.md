@@ -15,7 +15,7 @@ Ein **freigegebenes Roadmap-„Now"-Item** (Skill `define-roadmap`). Fehlt es, z
 ## Prozess (sokratisch — extrahieren, nicht erfinden)
 
 ### 1 — In Haupt-Tickets schneiden
-- **Ein Haupt-Ticket = ein ganzer Prozess-Schritt** (z. B. „Mitglied anlegen").
+- **Ein Haupt-Ticket = ein ganzer Prozess-Schritt.**
 - **Split-Regel (Größe):** Braucht die *fachliche* Beschreibung ein **UND** oder **ODER**, um sie auszudrücken → **zwei Haupt-Tickets.** Nicht künstlich zusammenfassen.
 - Jedes Ticket **vertikal & lieferbar** (INVEST: independent, valuable, testable).
 

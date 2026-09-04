@@ -1,7 +1,6 @@
 # AI-Pipeline — Delivery-Stufe (Design)
 
-_Status: **Design abgestimmt & gebaut** · 2026-09-04._
-_Teil der Pipeline → siehe [`VISION.md`](./VISION.md), [`STRATEGIE.md`](./STRATEGIE.md), [`REFINEMENT.md`](./REFINEMENT.md), [`DEFINITION_OF_DONE.md`](./DEFINITION_OF_DONE.md)._
+_Teil der Pipeline → siehe [`agentic-setup.md`](./agentic-setup.md), [`REFINEMENT.md`](./REFINEMENT.md), [`DEFINITION_OF_DONE.md`](./DEFINITION_OF_DONE.md)._
 
 Die Stufe, wo aus **reifen Tickets** (DoR) **fertiger, getesteter, gescannter Code** wird — mündend in einen **echten GitHub-MR**.
 
@@ -10,7 +9,7 @@ Die Stufe, wo aus **reifen Tickets** (DoR) **fertiger, getesteter, gescannter Co
 - **Austritts-Gate:** **DoD** — und zwar am **fertigen MR** (der Mensch reviewt/merged).
 
 ## Prinzip (Entscheidung des Nutzers)
-**Kontrolle, nicht Automatisierung — aber wenige Zwischen-Gates.** Anders als im Refinement (viele Human-Gates als Lern-Reps) verschiebt Delivery die Kontrolle **ans Ende**: der Mensch stoppt nicht an vier Zwischenschritten, sondern **reviewt den fertigen MR**, in dem alles steht. Zwischenstopp nur bei echter fachlicher Frage (→ PO) oder fehlender Reife (→ Refinement).
+**Kontrolle, nicht Automatisierung — aber wenige Zwischen-Gates.** Anders als im Refinement (mehrere Human-Gates) verschiebt Delivery die Kontrolle **ans Ende**: der Mensch stoppt nicht an vier Zwischenschritten, sondern **reviewt den fertigen MR**, in dem alles steht. Zwischenstopp nur bei echter fachlicher Frage (→ PO) oder fehlender Reife (→ Refinement).
 
 ## Gleiche Agents wie im Refinement — neue Skills
 | Agent | Rolle in Delivery | Skill |

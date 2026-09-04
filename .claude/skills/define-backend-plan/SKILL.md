@@ -7,7 +7,7 @@ description: Aus den Akzeptanzkriterien (AC) eines Tickets den BACKEND-PLAN able
 
 ## Was das ist — und was nicht
 Aus den **AC** (dem Vertrag) wird ein **umsetzbarer Backend-Plan**. **Refinement, nicht Implementierung** — es entsteht ein Plan, **kein Code**.
-- **Wählt den Tech-Approach NICHT selbst** — legt Optionen + Tradeoffs vor; die Entscheidung fällt am **Human-Design-Gate** (Gap 1.2).
+- **Wählt den Tech-Approach NICHT selbst** — legt Optionen + Tradeoffs vor; die Entscheidung fällt am **Human-Design-Gate**.
 
 ## Voraussetzung
 Ein Ticket mit **freigegebenen AC** (Skill `define-tickets`).
