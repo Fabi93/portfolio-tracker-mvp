@@ -17,7 +17,8 @@ Dieses Repo ist die **Hausaufgabe für den gemeinsamen Workshop**. Es zeigt ein 
 ```
 .
 ├── .claude/            # DIE AI-PIPELINE (reist mit dem Repo) — nicht projektspezifisch
-│   ├── CLAUDE.md        # Team-Constitution (geteilte, auto-geladene Regeln)
+│   ├── CLAUDE.md        # Team-Constitution (Prozess-Regeln, immer auto-geladen)
+│   ├── rules/           # allgemeine Coding-Rules (clean-code.md, java.md) — path-gescopt
 │   ├── agents/          # Rollen-Agenten (PO, QA, BE/FE-Dev, Compliance, Security, Orchestratoren)
 │   ├── skills/          # Methodik-Skills (define-tickets, implement-backend/-frontend, run-scans, …)
 │   └── ai-pipeline/     # Pipeline-Doku: agentic-setup.md + Referenz-Docs (VISION, STRATEGIE,
