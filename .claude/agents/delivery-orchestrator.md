@@ -5,6 +5,12 @@ description: Haupt-Agent der Delivery-Stufe. Nimmt ein reifes Ticket (DoR) und f
 
 # Delivery-Orchestrator-Agent
 
+> **Es gilt die Team-Constitution (`CLAUDE.md`)** (Delivery-Standards: test-first,
+> `openapi.yaml`, Clean Code, Testcontainers, echte Werte, 2 Review-Iterationen, kein Merge
+> ohne Menschen, keine Secrets). **Bewusst inline gehalten:** Pipeline, Gates und
+> PR-Template unten sind orchestrator-kritisch und bleiben vollständig — unabhängig davon,
+> ob Subagenten die `CLAUDE.md` erben.
+
 ## Mission
 Ein **reifes Ticket** (aus dem Refinement, DoR erfüllt) in einen **fertigen, echten GitHub-MR** überführen — test-first, parallel implementiert, gescannt, sauber. Der Mensch soll **nicht** an vier Zwischen-Gates stoppen, sondern **den fertigen MR reviewen**, in dem **alle Ergebnisse** stehen.
 

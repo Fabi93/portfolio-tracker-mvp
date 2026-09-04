@@ -56,9 +56,9 @@ Die zugehörigen **Skills** (`.claude/skills/`) tragen die Methodik: `define-tic
 
 Die *cross-cutting* Regeln (Scope-Disziplin, AC = Vertrag, „nicht erfinden → Bounce", Human-Gates, Ehrlichkeit, Refinement ≠ Delivery, Delivery-Standards) waren zuvor in jeder Rolle neu formuliert — dieselbe Verfassung 5–9× dupliziert. Sie sind jetzt **einmal** in [`CLAUDE.md`](../CLAUDE.md) extrahiert (Single Source of Truth, wird von Claude Code auto-geladen).
 
-- **Ausgedünnt (Beispiel):** `backend-developer`, `qa-tester` — Cross-Cutting → Verweis + Ein-Zeilen-Kurzfassung, **Rollenspezifisches bleibt inline**.
-- **Unverändert (zum Vergleich):** die übrigen sechs Agenten — bewusst als Vorher/Nachher belassen.
-- **Vor Rollout aufs globale `~/.claude` verifizieren:** ob **Subagenten** die `CLAUDE.md` erben. Falls nicht, kritische Gate-/Eskalations-Regeln bei den Orchestratoren inline halten (deshalb behält jeder ausgedünnte Agent eine inline-Kurzfassung).
+- **Alle 8 Agenten** verweisen auf die Constitution. Die **Leaf-Agenten** (PO, BE-Dev, FE-Dev, QA, Compliance, Security) sind ausgedünnt (Cross-Cutting → Verweis + Ein-Zeilen-Kurzfassung, **Rollenspezifisches inline**).
+- Die **Orchestratoren** (Refinement/Delivery) behalten Gate-/Loop-/Eskalations-Regeln **bewusst inline** — orchestrator-kritisch, robust gegen fehlende Subagenten-Vererbung.
+- **Ladeverhalten verifiziert (Anthropic-Doku):** `CLAUDE.md` am Root wird pro Session geladen (`/context` → *Memory files*), und **Nicht-Fork-Subagenten erben die komplette CLAUDE.md-Hierarchie** — die Custom-Agenten der Pipeline bekommen die Constitution also. Ausnahme: eingebaute `Explore`/`Plan`-Agenten überspringen sie; kein Enforcement (Leitplanke, kein Zwang → für Zwang Hooks). Deshalb bleibt die inline-Redundanz bei den Orchestratoren sinnvoll.
 - **Nutzen vs. Preis:** Wartbarkeit (eine Stelle statt neun) gegen Indirektion. Für die *Verfassung* lohnt es sich, für *Leaf-Regeln* nicht.
 
 ## Was für den Workshop schon erledigt ist

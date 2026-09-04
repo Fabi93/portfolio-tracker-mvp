@@ -5,6 +5,11 @@ description: Haupt-Agent der Refinement-Stufe. Routet ein freigegebenes Roadmap-
 
 # Refinement-Orchestrator
 
+> **Es gilt die Team-Constitution (`CLAUDE.md`)** (Scope, AC = Vertrag, nicht erfinden,
+> Human-Gates, Ehrlichkeit). **Bewusst inline gehalten:** die Gate-/Loop-/Eskalations-Regeln
+> unten sind orchestrator-kritisch und bleiben hier vollständig — unabhängig davon, ob
+> Subagenten die `CLAUDE.md` erben.
+
 ## Mission
 Aus einem Roadmap-„Now"-Item **reife, umsetzbare Tickets** machen — koordiniert über die Rollen-Agenten, **mit dem Menschen an den Gates**. Vollständige Design-Referenz: `~/.claude/ai-pipeline/REFINEMENT.md`.
 

@@ -6,15 +6,22 @@
 > PO-Schnitt-Regeln …) bleiben weiterhin **inline** im jeweiligen Agent/Skill — bewusst.
 >
 > **Prototyp-Hinweis:** Diese Extraktion liegt zunächst nur in dieser Repo-Kopie (nicht im
-> globalen `~/.claude`). Ausgedünnt sind exemplarisch `backend-developer` und `qa-tester`;
-> die übrigen sechs Agenten sind bewusst unverändert gelassen, damit ihr vorher/nachher
-> vergleichen könnt.
+> globalen `~/.claude`). **Alle 8 Agenten** verweisen jetzt hierauf. Die vier Leaf-Agenten
+> (`product-owner`, `backend-developer`, `frontend-developer`, `qa-tester`, `compliance`,
+> `security`) sind ausgedünnt (Cross-Cutting → Verweis, Rollenspezifisches inline); die zwei
+> **Orchestratoren** behalten ihre Gate-/Loop-Regeln **bewusst inline** (orchestrator-kritisch).
 >
-> **⚠️ Vor dem Rollout unbedingt verifizieren:** Ob **Subagenten** (via Task/Orchestrator)
-> diese `CLAUDE.md` automatisch in ihren Kontext geladen bekommen, ist nicht garantiert.
-> Falls **nicht**, müssen die kritischen Regeln (Gates, Eskalation) bei den Orchestratoren
-> **inline** bleiben. Deshalb behält jeder ausgedünnte Agent eine **Ein-Zeilen-Kurzfassung**
-> inline — die ausführliche Fassung steht nur hier.
+> **✅ Ladeverhalten verifiziert** (Anthropic-Doku, Stand Sept 2026):
+> - `CLAUDE.md` am Repo-Root wird **zu Beginn jeder Session** geladen (managed → user
+>   `~/.claude` → project `./CLAUDE.md`|`./.claude/CLAUDE.md`). Prüfen: `/context` → **Memory files**.
+> - **Nicht-Fork-Subagenten erben die komplette CLAUDE.md-Hierarchie der Hauptsession** — die
+>   Custom-Agenten dieser Pipeline bekommen diese Datei also.
+> - **Ausnahme:** die *eingebauten* `Explore`/`Plan`-Agenten überspringen CLAUDE.md; Auto-Memory
+>   wird nicht an Subagenten weitergereicht (CLAUDE.md schon).
+> - **Kein Enforcement:** CLAUDE.md ist Kontext/Leitplanke, keine harte Regel (für Zwang → Hooks).
+>   Deshalb behalten die Orchestratoren ihre Gate-/Eskalations-Regeln zusätzlich **inline**
+>   (bewusste Redundanz), und jeder ausgedünnte Agent trägt eine Ein-Zeilen-Kurzfassung.
+> - Quelle: <https://code.claude.com/docs/en/sub-agents> · <https://code.claude.com/docs/en/memory>
 
 ---
 
