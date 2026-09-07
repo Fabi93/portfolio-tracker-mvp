@@ -35,7 +35,7 @@ flowchart TB
 
 | Agent | Rolle | Ergebnis |
 |---|---|---|
-| `product-owner` | Schneidet Roadmap-Items in Tickets, formuliert testbare Akzeptanzkriterien (AC) | Tickets + AC (der „Vertrag") |
+| `product-owner` | Schneidet PRD-/Backlog-Items in Tickets, formuliert testbare Akzeptanzkriterien (AC) | Tickets + AC (der „Vertrag") |
 | `qa-tester` | Leitet aus AC ausführbare Acceptance-Tests ab, deckt Edge-/Error-Fälle auf | Given/When/Then-Specs, später rote Tests |
 | `backend-developer` | Datenmodell, API-Kontrakt, Tech-Approach-**Optionen** | Backend-Plan |
 | `frontend-developer` | UI/UX-Flows, Screens/States, kürzeste Wege | Frontend-Plan |

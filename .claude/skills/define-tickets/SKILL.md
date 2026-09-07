@@ -1,12 +1,12 @@
 ---
 name: define-tickets
-description: Ein Roadmap-Item in reife TICKET-Kandidaten schneiden — Haupt-Tickets (je ein ganzer Prozess-Schritt) mit testbaren Akzeptanzkriterien (AC) und Subtask-Struktur (Happy Path + technische + Test-Komponenten). Der PO-Anteil im Refinement. Einsetzen, wenn aus einem freigegebenen Roadmap-„Now" konkrete Tickets werden sollen. Sokratisch/extraktiv — AC ist der Vertrag für QA & Backend; erfindet keine fachliche Absicht, sondern eskaliert; Human-Gate.
+description: Ein PRD-/Backlog-Item in reife TICKET-Kandidaten schneiden — Haupt-Tickets (je ein ganzer Prozess-Schritt) mit testbaren Akzeptanzkriterien (AC) und Subtask-Struktur (Happy Path + technische + Test-Komponenten). Der PO-Anteil im Refinement. Einsetzen, wenn aus einem freigegebenen, priorisierten PRD-/Backlog-Item konkrete Tickets werden sollen. Sokratisch/extraktiv — AC ist der Vertrag für QA & Backend; erfindet keine fachliche Absicht, sondern eskaliert; Human-Gate.
 ---
 
 # Skill: Tickets schneiden & Akzeptanzkriterien
 
 ## Was das ist — und was nicht
-Aus einem Roadmap-Item werden **Haupt-Tickets** mit **Akzeptanzkriterien (AC)**. Die AC sind der **Vertrag**, den QA (Acceptance Tests) und Backend (Implementierung) beide konsumieren.
+Aus einem PRD-/Backlog-Item werden **Haupt-Tickets** mit **Akzeptanzkriterien (AC)**. Die AC sind der **Vertrag**, den QA (Acceptance Tests) und Backend (Implementierung) beide konsumieren.
 - **Kein** Schreiben von Acceptance Tests (das macht QA), **keine** technische Umsetzung/Architektur (Devs), **kein** Code.
 
 ## Voraussetzung
@@ -29,7 +29,7 @@ Ein **priorisiertes Element der Produktrichtung** (z. B. aus PRD/Backlog).
 - **Edge-/Error-Fälle** werden vom **QA-Agenten** ergänzt (dessen Härtetest erzeugt sie) — hier nur der Platz dafür.
 
 ### 4 — Fachliche Lücken NICHT erfinden
-Fehlt eine echte, noch nicht getroffene Produktentscheidung → **an den Menschen eskalieren** (nicht raten). Ableitbares aus PRD/Strategie darf beantwortet werden.
+Fehlt eine echte, noch nicht getroffene Produktentscheidung → **an den Menschen eskalieren** (nicht raten). Ableitbares aus PRD/AC darf beantwortet werden.
 
 ### 5 — Human-Gate
 Ticket-Schnitt + AC vorlegen, **plus** ehrliche Notiz, wo AC noch schwammig, zu groß (UND/ODER) oder in Wahrheit mehrere Schritte sind. Erst nach Freigabe „AC ok".

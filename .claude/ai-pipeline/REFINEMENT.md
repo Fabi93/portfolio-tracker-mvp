@@ -2,21 +2,21 @@
 
 _Überblick der Pipeline: siehe [`agentic-setup.md`](./agentic-setup.md)._
 
-Die Stufe, wo **PO-Track auf Dev-Track** trifft: aus einem Roadmap-Item werden **reife, umsetzbare Tickets**.
+Die Stufe, wo **PO-Track auf Dev-Track** trifft: aus einem PRD-/Backlog-Item werden **reife, umsetzbare Tickets**.
 
-- **Input:** ein Roadmap-„Now"-Item (ein Prozess-Schritt).
+- **Input:** ein priorisiertes PRD-/Backlog-Item (ein Prozess-Schritt).
 - **Output:** reife Tickets — jedes winzig, verifizierbar, **DoR erfüllt**.
 - **Austritts-Gate:** DoR (nicht DoD — die ist das Delivery-Gate der späteren Stufen).
 
 ## Zwei harte Regeln (nicht verhandelbar)
 1. **Der Orchestrator stoppt an Human-Gates.** Zwischen Gates loopt er frei; an Gates entscheidet der Mensch.
-2. **Der PO-Agent erfindet keine Produktentscheidungen.** Er beantwortet nur, was aus Vision/Strategie/AC **ableitbar** ist. Echte, noch nicht getroffene Entscheidungen → **Eskalation an den Menschen.**
+2. **Der PO-Agent erfindet keine Produktentscheidungen.** Er beantwortet nur, was aus PRD/AC **ableitbar** ist. Echte, noch nicht getroffene Entscheidungen → **Eskalation an den Menschen.**
 
 ## Agenten-Roster
 | Agent | Rolle im Refinement |
 |---|---|
 | **Orchestrator** (Haupt-Agent) | routet · sammelt Artefakte · hält die Loop · setzt die Gates · fasst Offenes zusammen |
-| **PO** | Roadmap-Item → Ticket-Scheiben + **AC**; beantwortet fachliche Fragen (oder eskaliert) |
+| **PO** | PRD-/Backlog-Item → Ticket-Scheiben + **AC**; beantwortet fachliche Fragen (oder eskaliert) |
 | **QA / Tester** | AC → **Acceptance Tests** (Given/When/Then); Edge-/Error-Jagd → erzeugt Case-Kinder-Tickets |
 | **Backend-Dev** | konsumiert **AC**; Datenmodell · API · BE-Tasks · Tech-Approach-Optionen · Größe |
 | **Frontend-Dev** | UI/UX; klärt mit PO die **kürzesten Wege** durch die Prozesse; FE-Tasks · Größe |
@@ -34,7 +34,7 @@ Die Stufe, wo **PO-Track auf Dev-Track** trifft: aus einem Roadmap-Item werden *
 
 ## Protokoll / Fluss
 ```
-Roadmap-Now
+PRD-/Backlog-Item
    │   ┌──────────── ORCHESTRATOR ────────────┐
    ▼   │ routet · Loop · Gates · Eskalation     │
        └────────────────────────────────────────┘

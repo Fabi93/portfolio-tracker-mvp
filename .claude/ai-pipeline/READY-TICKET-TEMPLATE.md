@@ -8,7 +8,7 @@ _Das Output-Artefakt der Refinement-Stufe. Ein Ticket ist REIF, wenn die DoR-Che
 # Ticket: [Prozess-Schritt]   (Parent)
 
 ## Intent & Wert
-- Warum / welcher Nutzen (aus PRD/Strategie)?
+- Warum / welcher Nutzen (aus PRD)?
 
 ## Akzeptanzkriterien (AC — Vertrag für QA & Backend)
 - [ ] …
@@ -41,7 +41,7 @@ _Das Output-Artefakt der Refinement-Stufe. Ein Ticket ist REIF, wenn die DoR-Che
 
 ## Definition of Ready (DoR) — Gate „REIF"
 Ein Ticket ist reif, wenn:
-1. **Intent & Wert** klar, aus PRD/Strategie ableitbar.
+1. **Intent & Wert** klar, aus PRD ableitbar.
 2. **AC** testbar & eindeutig (keine offenen Bounces).
 3. **≥ 1 Acceptance Test** (Happy) formuliert; Edge/Error-Cases als Subtasks identifiziert.
 4. **BE- & FE-Tasks** grob geschnitten; **Größe** abgeschätzt.
