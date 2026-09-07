@@ -15,7 +15,7 @@ Eine **Produkt-Strategie** ist der **Weg**, wie das Produkt seine Vision erreich
 **Kernprinzip (Rumelt):** Ohne ehrliche **Diagnose** und ohne **Verzicht** ist es keine Strategie, sondern Fluff.
 
 ## Voraussetzung
-Eine **freigegebene Vision** (siehe Skill `define-vision`). Fehlt sie, zuerst die Vision erarbeiten — Strategie ohne Vision ist orientierungslos.
+Eine gegebene **Produktrichtung/Vision** (im Prototyp aus dem **PRD**). Fehlt sie, zuerst die Richtung klären — Strategie ohne Vision ist orientierungslos.
 
 ## Right-Sizing (zuerst lesen)
 **Halte es schlank.** Für ein kleines/Solo-Vorhaben genügt eine **Ein-Seiten-Strategie**. Keine McKinsey-Kaskade, keine 20 Folien. Ein Baustein, sauber. Die Tiefe wächst mit echten Trade-offs (Markt, Wettbewerb, knappe Ressourcen) — nicht mit dem Wunsch nach Vollständigkeit.

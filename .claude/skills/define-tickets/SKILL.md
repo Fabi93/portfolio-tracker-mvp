@@ -10,7 +10,7 @@ Aus einem Roadmap-Item werden **Haupt-Tickets** mit **Akzeptanzkriterien (AC)**.
 - **Kein** Schreiben von Acceptance Tests (das macht QA), **keine** technische Umsetzung/Architektur (Devs), **kein** Code.
 
 ## Voraussetzung
-Ein **freigegebenes Roadmap-„Now"-Item** (Skill `define-roadmap`). Fehlt es, zuerst dorthin.
+Ein **priorisiertes Element der Produktrichtung** (z. B. aus PRD/Backlog).
 
 ## Prozess (sokratisch — extrahieren, nicht erfinden)
 
@@ -29,7 +29,7 @@ Ein **freigegebenes Roadmap-„Now"-Item** (Skill `define-roadmap`). Fehlt es, z
 - **Edge-/Error-Fälle** werden vom **QA-Agenten** ergänzt (dessen Härtetest erzeugt sie) — hier nur der Platz dafür.
 
 ### 4 — Fachliche Lücken NICHT erfinden
-Fehlt eine echte, noch nicht getroffene Produktentscheidung → **an den Menschen eskalieren** (nicht raten). Ableitbares aus Vision/Strategie/Roadmap darf beantwortet werden.
+Fehlt eine echte, noch nicht getroffene Produktentscheidung → **an den Menschen eskalieren** (nicht raten). Ableitbares aus PRD/Strategie darf beantwortet werden.
 
 ### 5 — Human-Gate
 Ticket-Schnitt + AC vorlegen, **plus** ehrliche Notiz, wo AC noch schwammig, zu groß (UND/ODER) oder in Wahrheit mehrere Schritte sind. Erst nach Freigabe „AC ok".

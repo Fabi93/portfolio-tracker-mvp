@@ -28,7 +28,7 @@ Ein **reifes Ticket** (aus dem Refinement, DoR erfüllt) in einen **fertigen, ec
    - **Backend-Dev** (`implement-backend`): gegen Kontrakt + Acceptance-Tests; **Unit + Integration (Testcontainers) + API-Tests**; Clean Code / Clean Architecture.
    - **Frontend-Dev** (`implement-frontend`): gegen Kontrakt + Playwright-Tests; **Unit/Komponente + Integration**; UX-Flow/States/a11y; Clean Code.
    - Beide laufen **gleichzeitig** (Kontrakt ist die Entkopplung). Zusammenführen, wenn beide grün.
-5. **Alle Tests grün?** Acceptance (BE+FE) + Unit + Integration + API + Playwright. Sonst zurück an den jeweiligen Dev (kein Test-Anpassen, um grün zu werden).
+5. **Alle Tests grün?** Acceptance (BE+FE) + Unit + Integration + API + Playwright. Sonst zurück an den jeweiligen Dev (kein Test-Anpassen, um grün zu werden). **Start-Nachweis:** Backend **und** Frontend je einmal **real hochfahren** (nicht nur kompilieren) — beide müssen fehlerfrei starten.
 6. **Review — GENAU 2 Iterationen:**
    - **Security** (`run-scans`): SonarQube-Container, Dependency-Scan, Image-/Container-Scan, `npm audit` — **echte Werte**.
    - **Clean-Code-Review auf dem Diff:** Backend-Dev reviewt Backend-Diff, Frontend-Dev reviewt Frontend-Diff (R. C. Martin + Sprach-Best-Practices).
@@ -73,15 +73,16 @@ Ein **reifes Ticket** (aus dem Refinement, DoR erfüllt) in einen **fertigen, ec
 - [Schweregrad] … · Grund/Plan …
 
 ## DoD-Abgleich
-- [ ] ≥1 Acceptance Test · [ ] Scope-Treue · [ ] Clean Code/Arch · [ ] Security-Tests · [ ] Performance-Ziele · [ ] Scans dokumentiert
+- [ ] ≥1 Acceptance Test · [ ] Scope-Treue · [ ] Clean Code/Arch · [ ] Security-Tests · [ ] Performance-Ziele · [ ] Scans dokumentiert · [ ] Start-Nachweis (BE+FE real hochgefahren)
 ```
 
 ## Definition of Done (Orchestrator)
 1. QA-Acceptance-Tests test-first (rot→grün), BE **und** FE, inkl. Compliance/Security.
 2. `openapi.yaml` als gemeinsamer Kontrakt; BE+FE parallel dagegen implementiert.
 3. Unit/Integration/API/Playwright grün; Testcontainers wo DB-Abhängigkeit.
-4. Genau 2 Review-Iterationen (Scans real + Clean-Code-Review); Rest dokumentiert.
-5. **Echter GitHub-PR** erstellt; alle Ergebnisse + offene Punkte in der Description; **kein** Auto-Merge.
+4. **Start-Nachweis:** Backend **und** Frontend nach den Änderungen je einmal **real gestartet** (hochgefahren, nicht nur kompiliert); Ergebnis in der PR-Description.
+5. Genau 2 Review-Iterationen (Scans real + Clean-Code-Review); Rest dokumentiert.
+6. **Echter GitHub-PR** erstellt; alle Ergebnisse + offene Punkte in der Description; **kein** Auto-Merge.
 
 ## Output
 Kurzfassung (Ticket, Grün-Stand, Scan-Kernwerte, offene Punkte) **plus PR-Link**, gefolgt von einer ehrlichen Einschätzung der Rest-Risiken.

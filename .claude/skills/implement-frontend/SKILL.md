@@ -23,6 +23,7 @@ Reifes Ticket + **Frontend-Plan** (define-frontend-plan) + **QA-Playwright-Accep
    - **Playwright-E2E (QA):** müssen grün werden — der Nutzerfluss end-to-end.
 7. **Compliance & Security im FE:** keine sensiblen Daten in URL/Logs, Eingabe-Validierung clientseitig (zusätzlich, nicht statt Server), Einwilligung/Datensparsamkeit wie definiert — zugehörige Acceptance-Tests grün.
 8. **Clean Code (R. C. Martin)** durchgehend — siehe Checkliste. **UI-Performance** gegen QA-Ziele (Renderzeit, große Listen: Virtualisierung/Pagination).
+9. **Start-Nachweis:** Das Frontend wird nach den Änderungen einmal real gestartet (`npm start`/Build ohne Fehler, App lädt fehlerfrei). Pflicht-Teil der DoD.
 
 ## Clean-Code-Checkliste (verbindlich)
 - **Namen** absichtsoffenbarend; **Funktionen/Komponenten** klein, eine Aufgabe, ein Abstraktionsniveau, wenige Props/Args, keine versteckten Seiteneffekte.

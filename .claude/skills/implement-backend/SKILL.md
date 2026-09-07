@@ -21,7 +21,7 @@ Reifes Ticket + **QA-Acceptance-Tests** (rot) inkl. Compliance-/Security-Abdecku
    - **API-Tests:** Endpunkt-Ebene (Request→Status/Body), ergänzend zu den QA-Acceptance-Tests.
 5. **Compliance & Security umsetzen:** Input-Validierung serverseitig, AuthZ, keine Datenexposition/Secrets im Response/Log, Datenminimierung/Löschung wie im Refinement definiert — die zugehörigen Acceptance-Tests müssen grün werden.
 6. **Clean Code (R. C. Martin) durchgehend** — siehe Checkliste. **Performance** gegen die QA-Ziele prüfen (N+1, Indizes, Antwortzeit-Budget).
-7. **Grün-Nachweis:** Alle Acceptance-, Unit-, Integrations- und API-Tests grün; Build läuft.
+7. **Grün- & Start-Nachweis:** Alle Acceptance-, Unit-, Integrations- und API-Tests grün; Build läuft — **und das Backend wird nach den Änderungen einmal real gestartet** (`mvn spring-boot:run` bootet fehlerfrei, Port/Health erreichbar). Pflicht-Teil der DoD.
 
 ## Clean-Code-Checkliste (verbindlich)
 - **Namen:** absichtsoffenbarend, keine Rätsel-Kürzel.

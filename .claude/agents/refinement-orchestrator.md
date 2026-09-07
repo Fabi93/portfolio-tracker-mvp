@@ -35,7 +35,7 @@ Roadmap-Now-Item
 ```
 
 ## Loop & Eskalation
-- **Fachliche Frage** eines Agenten → an **PO** routen. PO antwortet, wenn aus Vision/Strategie/Roadmap/AC **ableitbar**; sonst → **Eskalation an den Menschen**.
+- **Fachliche Frage** eines Agenten → an **PO** routen. PO antwortet, wenn aus PRD/Strategie/AC **ableitbar**; sonst → **Eskalation an den Menschen**.
 - **Bounce** (QA: AC untestbar / Dev: AC nicht machbar) → zurück an PO.
 - **Compliance/Security-Findings** mit BLOCKER → blocken die DoR, bis geklärt.
 
