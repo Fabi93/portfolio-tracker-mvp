@@ -54,4 +54,11 @@ public class PortfolioResource {
     public MoneyResponse value() {
         return MoneyResponse.eur(portfolioService.totalValue());
     }
+
+    /** US3: absoluter Gewinn/Verlust des Portfolios in EUR. */
+    @GET
+    @Path("/performance")
+    public MoneyResponse performance() {
+        return MoneyResponse.eur(portfolioService.absoluteProfitLoss());
+    }
 }

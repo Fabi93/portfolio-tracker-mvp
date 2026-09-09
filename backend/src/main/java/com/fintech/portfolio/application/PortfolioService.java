@@ -13,8 +13,8 @@ import java.util.List;
 /**
  * Zentrale Geschäftslogik des MVP.
  *
- * <p>Der Bestand wird im MVP in-memory gehalten. US1 (hinzufügen) und US2 (Gesamtwert) sind
- * umgesetzt; US3 (Gewinn/Verlust) kommt im nächsten Anforderungs-Commit dazu.
+ * <p>Der Bestand wird im MVP in-memory gehalten. US1 (hinzufügen), US2 (Gesamtwert) und
+ * US3 (Gewinn/Verlust) sind umgesetzt.
  */
 @ApplicationScoped
 public class PortfolioService {
@@ -47,6 +47,14 @@ public class PortfolioService {
                 .map(this::currentValueOf)
                 .reduce(BigDecimal.ZERO, BigDecimal::add)
                 .setScale(MONEY_SCALE, RoundingMode.HALF_EVEN);
+    }
+
+    /**
+     * US3: Absoluter Gewinn/Verlust in EUR = totalValue() − historicalCost().
+     * Positiv = Gewinn, negativ = Verlust. Rundung HALF_EVEN auf 2 Nachkommastellen.
+     */
+    public BigDecimal absoluteProfitLoss() {
+        return totalValue().subtract(historicalCost()).setScale(MONEY_SCALE, RoundingMode.HALF_EVEN);
     }
 
     /** Gesamter historischer Kaufwert = Σ (quantity_i * buyInPrice_i). */
