@@ -1,0 +1,89 @@
+openapi: 3.0.3
+info:
+  title: Minimal Portfolio Tracker API
+  version: 0.1.0
+  description: >
+    Gemeinsamer, bindender Kontrakt zwischen Backend (Quarkus) und Frontend (Vue).
+    Deckt US1 (Position hinzufügen), US2 (Portfoliowert) und US3 (Gewinn/Verlust).
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/portfolio/positions:
+    post:
+      summary: US1 — Position hinzufügen
+      operationId: addPosition
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddPositionRequest'
+      responses:
+        '201':
+          description: Position angelegt
+        '400':
+          description: Validierungsfehler (ungültige Eingaben)
+    get:
+      summary: Positionen auflisten
+      operationId: listPositions
+      responses:
+        '200':
+          description: Liste der Positionen
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Position'
+  /api/portfolio/value:
+    get:
+      summary: US2 — aktueller Gesamtwert (EUR)
+      operationId: getValue
+      responses:
+        '200':
+          description: Gesamtwert
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MoneyResponse'
+  /api/portfolio/performance:
+    get:
+      summary: US3 — absoluter Gewinn/Verlust (EUR)
+      operationId: getPerformance
+      responses:
+        '200':
+          description: Absoluter Gewinn/Verlust
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MoneyResponse'
+components:
+  schemas:
+    AddPositionRequest:
+      type: object
+      required: [isin, quantity, buyInPrice]
+      properties:
+        isin:
+          type: string
+          minLength: 1
+          example: IE00B4L5Y983
+        quantity:
+          type: number
+          exclusiveMinimum: true
+          minimum: 0
+          example: 10
+        buyInPrice:
+          type: number
+          minimum: 0
+          example: 90.00
+    Position:
+      type: object
+      properties:
+        isin: { type: string }
+        quantity: { type: number }
+        buyInPrice: { type: number }
+    MoneyResponse:
+      type: object
+      properties:
+        amount: { type: number, example: 1025.00 }
+        currency: { type: string, example: EUR }
