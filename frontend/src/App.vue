@@ -13,12 +13,11 @@ const positions = ref<Position[]>([])
 const holdings = ref<Holding[]>([])
 const value = ref<MoneyResponse | null>(null)
 const pnl = ref<MoneyResponse | null>(null)
-const loading = ref(false)
+const initialLoading = ref(true)
 const error = ref<string | null>(null)
 const reloadKey = ref(0)
 
 async function reload(): Promise<void> {
-  loading.value = true
   error.value = null
   try {
     const [loadedPositions, loadedValue, loadedPnl, loadedHoldings] = await Promise.all([
@@ -35,7 +34,7 @@ async function reload(): Promise<void> {
   } catch (e) {
     error.value = e instanceof Error ? e.message : 'Unbekannter Fehler'
   } finally {
-    loading.value = false
+    initialLoading.value = false
   }
 }
 
@@ -46,21 +45,33 @@ onMounted(reload)
   <main>
     <header>
       <h1>Portfolio Tracker</h1>
-      <p class="subtitle">Manuelles Portfolio · Werte in EUR</p>
+      <p class="subtitle">Manuelles Portfolio · Performance auf einen Blick · Werte in EUR</p>
     </header>
 
-    <PortfolioSummary :value="value" :pnl="pnl" :loading="loading" :error="error" />
+    <PortfolioSummary :value="value" :pnl="pnl" :loading="initialLoading" :error="error" />
 
-    <BenchmarkCompare :reload-key="reloadKey" />
+    <section class="section">
+      <h2 class="section-title">Benchmark-Vergleich</h2>
+      <p class="section-note">Prozentuale Rendite des Portfolios gegenüber einer Benchmark (Out-/Underperformance).</p>
+      <BenchmarkCompare :reload-key="reloadKey" />
+    </section>
 
-    <div class="grid">
-      <AddPositionForm @added="reload" />
-      <PositionList :positions="positions" :loading="loading" :error="error" />
-    </div>
+    <section class="section">
+      <h2 class="section-title">Positionen</h2>
+      <p class="section-note">Bestandsbasierte Erfassung (US1–US3): eine Position je Eintrag mit fixem Kaufkurs.</p>
+      <div class="grid">
+        <AddPositionForm @added="reload" />
+        <PositionList :positions="positions" :loading="initialLoading" :error="error" />
+      </div>
+    </section>
 
-    <div class="grid">
-      <AddTransactionForm @added="reload" />
-      <HoldingList :holdings="holdings" :loading="loading" :error="error" />
-    </div>
+    <section class="section">
+      <h2 class="section-title">Transaktionen</h2>
+      <p class="section-note">Transaktionsbasiert (Ausbaustufe 1): Bestand &amp; Ø-Einstiegskurs werden aus BUY/SELL abgeleitet.</p>
+      <div class="grid">
+        <AddTransactionForm @added="reload" />
+        <HoldingList :holdings="holdings" :loading="initialLoading" :error="error" />
+      </div>
+    </section>
   </main>
 </template>

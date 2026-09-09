@@ -55,7 +55,7 @@ async function onSubmit(): Promise<void> {
 
 <template>
   <form class="card" @submit.prevent="onSubmit" aria-labelledby="tx-title">
-    <h2 id="tx-title">Transaktion erfassen</h2>
+    <h3 id="tx-title">Transaktion erfassen</h3>
 
     <div class="field">
       <label for="tx-type">Art</label>

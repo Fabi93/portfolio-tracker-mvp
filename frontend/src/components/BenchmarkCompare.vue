@@ -40,9 +40,7 @@ watch(() => props.reloadKey, compare)
 </script>
 
 <template>
-  <section class="card" aria-labelledby="bench-title">
-    <h2 id="bench-title">Benchmark-Vergleich</h2>
-
+  <div class="card">
     <div class="benchmark-controls">
       <div class="field">
         <label for="bench-id">Benchmark</label>
@@ -73,5 +71,5 @@ watch(() => props.reloadKey, compare)
         </span>
       </div>
     </div>
-  </section>
+  </div>
 </template>

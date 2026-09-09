@@ -45,7 +45,7 @@ async function onSubmit(): Promise<void> {
 
 <template>
   <form class="card" @submit.prevent="onSubmit" aria-labelledby="add-title">
-    <h2 id="add-title">Position hinzufügen</h2>
+    <h3 id="add-title">Position hinzufügen</h3>
 
     <div class="field">
       <label for="isin">Wertpapier-Kennnummer (ISIN)</label>

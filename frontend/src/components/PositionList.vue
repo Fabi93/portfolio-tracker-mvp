@@ -12,7 +12,7 @@ const eur = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' 
 
 <template>
   <section class="card" aria-labelledby="list-title">
-    <h2 id="list-title">Positionen</h2>
+    <h3 id="list-title">Bestand</h3>
 
     <p v-if="loading" class="msg" role="status">Lädt…</p>
     <p v-else-if="error" class="msg error" role="alert">{{ error }}</p>
