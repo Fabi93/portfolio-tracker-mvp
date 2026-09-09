@@ -35,6 +35,34 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Position'
+  /api/portfolio/transactions:
+    post:
+      summary: Ausbaustufe 1 — Transaktion (BUY/SELL) erfassen
+      operationId: addTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddTransactionRequest'
+      responses:
+        '201':
+          description: Transaktion erfasst
+        '400':
+          description: Validierungsfehler oder Verkauf über den Bestand hinaus
+  /api/portfolio/holdings:
+    get:
+      summary: Ausbaustufe 1 — abgeleitete Bestände (Menge + Ø-Einstiegskurs)
+      operationId: getHoldings
+      responses:
+        '200':
+          description: Bestände je ISIN
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Holding'
   /api/portfolio/value:
     get:
       summary: US2 — aktueller Gesamtwert (EUR)
@@ -87,3 +115,18 @@ components:
       properties:
         amount: { type: number, example: 1025.00 }
         currency: { type: string, example: EUR }
+    AddTransactionRequest:
+      type: object
+      required: [type, isin, date, quantity, price]
+      properties:
+        type: { type: string, enum: [BUY, SELL] }
+        isin: { type: string, minLength: 1, example: IE00B4L5Y983 }
+        date: { type: string, format: date, example: '2026-01-05' }
+        quantity: { type: number, exclusiveMinimum: true, minimum: 0, example: 10 }
+        price: { type: number, minimum: 0, example: 90.00 }
+    Holding:
+      type: object
+      properties:
+        isin: { type: string }
+        quantity: { type: number }
+        averageBuyIn: { type: number, example: 100.00 }

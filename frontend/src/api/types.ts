@@ -16,3 +16,28 @@ export interface MoneyResponse {
   amount: number
   currency: string
 }
+
+// Ausbaustufe 1 — Transaktionen & Bestände
+export type TransactionType = 'BUY' | 'SELL'
+
+export interface AddTransactionRequest {
+  type: TransactionType
+  isin: string
+  date: string // ISO-Datum (YYYY-MM-DD)
+  quantity: number
+  price: number
+}
+
+export interface Holding {
+  isin: string
+  quantity: number
+  averageBuyIn: number
+}
+
+// Ausbaustufe 2 — Benchmark-Vergleich
+export interface BenchmarkComparison {
+  benchmarkId: string
+  portfolioReturnPct: number
+  benchmarkReturnPct: number
+  outperformancePct: number
+}

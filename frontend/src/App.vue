@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { getPerformance, getValue, listPositions } from './api/portfolio'
-import type { MoneyResponse, Position } from './api/types'
+import { getPerformance, getValue, listHoldings, listPositions } from './api/portfolio'
+import type { Holding, MoneyResponse, Position } from './api/types'
 import AddPositionForm from './components/AddPositionForm.vue'
 import PositionList from './components/PositionList.vue'
 import PortfolioSummary from './components/PortfolioSummary.vue'
+import AddTransactionForm from './components/AddTransactionForm.vue'
+import HoldingList from './components/HoldingList.vue'
 
 const positions = ref<Position[]>([])
+const holdings = ref<Holding[]>([])
 const value = ref<MoneyResponse | null>(null)
 const pnl = ref<MoneyResponse | null>(null)
 const loading = ref(false)
@@ -16,14 +19,16 @@ async function reload(): Promise<void> {
   loading.value = true
   error.value = null
   try {
-    const [loadedPositions, loadedValue, loadedPnl] = await Promise.all([
+    const [loadedPositions, loadedValue, loadedPnl, loadedHoldings] = await Promise.all([
       listPositions(),
       getValue(),
       getPerformance(),
+      listHoldings(),
     ])
     positions.value = loadedPositions
     value.value = loadedValue
     pnl.value = loadedPnl
+    holdings.value = loadedHoldings
   } catch (e) {
     error.value = e instanceof Error ? e.message : 'Unbekannter Fehler'
   } finally {
@@ -46,6 +51,11 @@ onMounted(reload)
     <div class="grid">
       <AddPositionForm @added="reload" />
       <PositionList :positions="positions" :loading="loading" :error="error" />
+    </div>
+
+    <div class="grid">
+      <AddTransactionForm @added="reload" />
+      <HoldingList :holdings="holdings" :loading="loading" :error="error" />
     </div>
   </main>
 </template>
