@@ -2,10 +2,10 @@
 backend/target/
 *.class
 
-# --- Node / Angular ---
+# --- Node / Vue (Vite) ---
 frontend/node_modules/
 frontend/dist/
-frontend/.angular/
+frontend/.vite/
 npm-debug.log*
 
 # --- IDE / OS ---
