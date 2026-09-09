@@ -75,6 +75,14 @@ button:disabled { opacity: .6; cursor: default; }
 .msg.error { color: var(--error); }
 .msg.success { color: var(--success); }
 
+.summary { margin-bottom: 1rem; }
+.metrics { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.metric { display: flex; flex-direction: column; gap: .25rem; }
+.metric-label { color: var(--muted); font-size: .85rem; }
+.metric-value { font-size: 1.8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.metric-value.gain { color: var(--success); }
+.metric-value.loss { color: var(--error); }
+
 table { width: 100%; border-collapse: collapse; }
 th, td { padding: .55rem .5rem; border-bottom: 1px solid var(--border); text-align: left; }
 th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }

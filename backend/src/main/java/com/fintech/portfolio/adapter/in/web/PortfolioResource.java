@@ -1,6 +1,7 @@
 package com.fintech.portfolio.adapter.in.web;
 
 import com.fintech.portfolio.adapter.in.web.dto.AddPositionRequest;
+import com.fintech.portfolio.adapter.in.web.dto.MoneyResponse;
 import com.fintech.portfolio.adapter.in.web.dto.PositionResponse;
 import com.fintech.portfolio.application.PortfolioService;
 import com.fintech.portfolio.domain.Position;
@@ -45,5 +46,12 @@ public class PortfolioResource {
         return portfolioService.positions().stream()
                 .map(PositionResponse::from)
                 .toList();
+    }
+
+    /** US2: aktueller Gesamtwert des Portfolios in EUR. */
+    @GET
+    @Path("/value")
+    public MoneyResponse value() {
+        return MoneyResponse.eur(portfolioService.totalValue());
     }
 }
