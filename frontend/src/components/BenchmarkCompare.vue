@@ -3,7 +3,7 @@ import { onMounted, ref, watch } from 'vue'
 import { compareBenchmark } from '../api/portfolio'
 import type { BenchmarkComparison } from '../api/types'
 
-const props = defineProps<{ reloadKey: number }>()
+const props = withDefaults(defineProps<{ reloadKey?: number }>(), { reloadKey: 0 })
 
 const benchmarks = [
   { id: 'MSCI_WORLD', label: 'MSCI World' },
