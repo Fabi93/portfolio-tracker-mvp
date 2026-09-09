@@ -85,6 +85,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MoneyResponse'
+  /api/portfolio/benchmark:
+    get:
+      summary: Ausbaustufe 2 — Benchmark-Vergleich (prozentuale Out-/Underperformance)
+      operationId: compareBenchmark
+      parameters:
+        - name: benchmarkId
+          in: query
+          required: true
+          schema: { type: string, example: MSCI_WORLD }
+      responses:
+        '200':
+          description: Vergleich Portfolio- vs. Benchmark-Rendite
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BenchmarkResponse'
+        '400':
+          description: fehlende oder unbekannte Benchmark-ID
 components:
   schemas:
     AddPositionRequest:
@@ -130,3 +148,10 @@ components:
         isin: { type: string }
         quantity: { type: number }
         averageBuyIn: { type: number, example: 100.00 }
+    BenchmarkResponse:
+      type: object
+      properties:
+        benchmarkId: { type: string, example: MSCI_WORLD }
+        portfolioReturnPct: { type: number, example: 13.89 }
+        benchmarkReturnPct: { type: number, example: 8.00 }
+        outperformancePct: { type: number, example: 5.89 }
