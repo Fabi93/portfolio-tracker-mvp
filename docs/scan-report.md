@@ -21,19 +21,13 @@ Server: SonarQube 26.9 Community (Docker), Projekt `portfolio-tracker`.
 **Iteration-1-Findings (behoben):** 3× MAJOR Code Smell in `PositionTest` — `assertThrows`-Lambdas enthielten mehr als eine potenziell werfende Invocation (`new BigDecimal(...)`). Fix: Werte in Konstanten extrahiert → Lambda enthält nur noch den Konstruktor-Aufruf. Re-Scan: 0 Smells.
 
 ## Dependency-Scan — Backend (Trivy)
-**63 CVEs** in den transitiven Abhängigkeiten:
 
-| Schweregrad | Anzahl |
-|---|---|
-| CRITICAL | 1 |
-| HIGH | 28 |
-| MEDIUM | 31 |
-| LOW | 3 |
+| | CRITICAL | HIGH | MEDIUM | LOW | Total |
+|---|---|---|---|---|---|
+| **Vorher (Quarkus 3.15.1)** | 1 | 28 | 31 | 3 | **63** |
+| **Nachher (Quarkus 3.39.2)** | 0 | 0 | 0 | 0 | **0** ✅ |
 
-Betroffene Pakete: Netty (`netty-codec-http/http2/handler/…`), Jackson (`jackson-core/databind`), Vert.x (`vertx-core/web`), Quarkus (`quarkus-rest`, `quarkus-vertx`, `quarkus-vertx-http`).
-Beispiele: `quarkus-vertx-http` Authorization-Bypass (**HIGH**, CVE-2026-39852 / CVE-2026-50559), `quarkus-rest` Worker-Thread-Exhaustion (MEDIUM, CVE-2025-66560).
-
-**Ursache:** gepinntes **Quarkus 3.15.1** (`pom.xml`) ist veraltet. **Empfohlener Fix:** `quarkus.platform.version` auf die aktuelle LTS anheben → räumt den Großteil der CVEs. **Nicht** in diesen 2 Iterationen umgesetzt (potenziell breaking, Entscheidung/Human-Gate).
+**Ursache & Fix:** Das gepinnte **Quarkus 3.15.1** war veraltet (CVEs in Netty/Jackson/Vert.x/quarkus-vertx-http, u. a. Authorization-Bypass CVE-2026-39852/50559). **Behoben** durch Upgrade `quarkus.platform.version` → **3.39.2**; danach **0 CVEs** und **39/39 Backend-Tests weiterhin grün**.
 
 ## Dependency-Scan — Frontend
 - **Trivy** (`package-lock.json`): **0** Vulnerabilities.
@@ -42,9 +36,9 @@ Beispiele: `quarkus-vertx-http` Authorization-Bypass (**HIGH**, CVE-2026-39852 /
 ## Image-/Container-Scan
 **Nicht ausgeführt: Grund** — es wird **kein Container-Image** gebaut (Quarkus fast-jar, kein Dockerfile). Aktivierbar über die Extension `quarkus-container-image-docker` (`-Dquarkus.container-image.build=true`), dann `trivy image <image>`.
 
-## Nach 2 Iterationen noch OFFEN (→ Entscheidung)
-- **[1 CRITICAL / 28 HIGH] Backend-Dependency-CVEs** über veraltetes Quarkus 3.15.1 → Platform-Upgrade nötig (eigenes Ticket, da potenziell breaking).
+## Nach 2 Iterationen noch OFFEN
 - **[Info] Image-Scan** erst nach Bereitstellung eines Container-Images möglich.
+- _(Backend-Dependency-CVEs: **behoben** durch Quarkus-Upgrade 3.15.1 → 3.39.2, siehe oben.)_
 
 ## Reproduktion
 ```bash
