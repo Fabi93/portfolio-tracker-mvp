@@ -38,6 +38,11 @@ public class PortfolioService {
         return List.copyOf(positions);
     }
 
+    /** Setzt das (In-Memory-)Portfolio zurück. */
+    public void clear() {
+        positions.clear();
+    }
+
     /**
      * US2: Aktueller Gesamtwert in EUR = Σ (quantity_i * aktueller Marktkurs_i).
      * Leeres Portfolio ⇒ 0.00. Rundung HALF_EVEN auf 2 Nachkommastellen.

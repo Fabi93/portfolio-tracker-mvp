@@ -29,6 +29,11 @@ public class TransactionService {
         return List.copyOf(transactions);
     }
 
+    /** Setzt die (In-Memory-)Transaktionshistorie zurück. */
+    public void clear() {
+        transactions.clear();
+    }
+
     public List<Holding> holdings() {
         return HoldingsCalculator.from(transactions);
     }
