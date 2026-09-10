@@ -60,5 +60,12 @@ Reifes Ticket + **QA-Acceptance-Tests** (rot) inkl. Compliance-/Security-Abdecku
 - …
 ```
 
+## Toolchain-Preflight & Test-Isolation (aus echten Läufen → `../../ai-pipeline/LESSONS-LEARNED.md` B/C)
+- **JAVA_HOME** vor jedem Maven-Aufruf setzen: `export JAVA_HOME="$(/usr/libexec/java_home -v <ziel>)"` (sonst falsches JDK → „release version X not supported").
+- **maven-compiler-plugin** explizit pinnen (`<release>`), Default 3.1 kann kein Java 21.
+- **`quarkus:dev`** braucht **Maven ≥ 3.8.6**; sonst `mvn package && java -jar target/quarkus-app/quarkus-run.jar`.
+- **Test-Isolation:** `@ApplicationScoped`-Singletons teilen In-Memory-State über `@QuarkusTest`-Klassen → **`@BeforeEach`-Reset** (Service-`clear()`) und **echte Werte** assert­en.
+- **`-q` + `| tail`** verfälscht Exit-Code — Ergebnis über Surefire/`grep "BUILD (SUCCESS|FAILURE)"` prüfen.
+
 ## Quellen
 Clean Code & Clean Architecture (R. C. Martin); Testcontainers; Testpyramide (Unit > Integration > E2E); OpenAPI.

@@ -44,5 +44,13 @@ Implementierung fertig, alle Acceptance-/Unit-/Integrationstests grün, Build l�
 - Scan … : Grund …
 ```
 
+## Bewährte Praxis & Stolpersteine (aus echten Läufen → `../../ai-pipeline/LESSONS-LEARNED.md` D)
+- **Sonar-Goal voll-qualifiziert:** `org.sonarsource.scanner.maven:sonar-maven-plugin:sonar` (der `sonar:sonar`-Prefix ist Maven unbekannt).
+- **Coverage nur mit JaCoCo:** `jacoco-maven-plugin` (prepare-agent+report), `-Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml`; vorher `mvn clean verify`.
+- **SonarQube:** Login erzwungen (admin/admin), Token per `POST /api/user_tokens/generate`; nach der Analyse **CE-Verarbeitung abwarten** (`/api/ce/component` → SUCCESS); Container kann stoppen → `docker start` (Daten im Container, `rm` löscht sie).
+- **Trivy-Dependency-Scan** auf das **Projekt mit `pom.xml`** (`trivy fs --scanners vuln backend`), nicht nur die Jar-Dir. Frontend: `--skip-dirs node_modules` + `npm audit`.
+- **Image-Scan** nur mit gebautem Image (`quarkus-container-image-docker`) — sonst „nicht ausgeführt: Grund".
+- **Dependency-Freshness zuerst prüfen:** veraltetes Platform-Pinning ist die häufigste CVE-Quelle (Quarkus 3.15.1 → 63 CVEs; Upgrade → 0).
+
 ## Quellen
-SonarQube (Quality Gate/Metriken); OWASP Dependency-Check; Trivy (Image-Scan); `npm audit`. Werte sind **gemessen**, nicht behauptet („demonstrated, not claimed").
+SonarQube (Quality Gate/Metriken); OWASP Dependency-Check; Trivy (fs-/Image-Scan); `npm audit`. Werte sind **gemessen**, nicht behauptet („demonstrated, not claimed").

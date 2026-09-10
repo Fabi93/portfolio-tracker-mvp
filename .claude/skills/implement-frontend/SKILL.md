@@ -61,5 +61,11 @@ Reifes Ticket + **Frontend-Plan** (define-frontend-plan) + **QA-Playwright-Accep
 - …
 ```
 
+## Frontend-Tests sind Pflicht (aus echten Läufen → `../../ai-pipeline/LESSONS-LEARNED.md` A/C)
+Beide Ebenen aufsetzen — sie werden sonst übersehen und die DoD ist verletzt:
+- **Vitest + Vue/Testing-Library** (Component): Formvalidierung, State-Übergänge (empty/loading/error/success), Emits; API-Modul mocken.
+- **Playwright-E2E**: rollen-/label-basierte Selektoren, **eigene Testdaten je Lauf** (nicht auf geteilten Backend-State verlassen), `webServer` startet FE **und** BE; Texte, die auch in Microcopy vorkommen, mit `{ exact: true }` treffen.
+- **npm-Arborist-Bug** (`edgesOut`) → `--legacy-peer-deps` bzw. `.npmrc`.
+
 ## Quellen
-Clean Code (R. C. Martin); Playwright (rollenbasierte Selektoren, Web-First-Assertions); UI-States (empty/loading/error/success); a11y (WCAG-Grundlagen, Touch-Ziele).
+Clean Code (R. C. Martin); Playwright (rollenbasierte Selektoren, Web-First-Assertions); Vitest/Vue Test Utils; UI-States (empty/loading/error/success); a11y (WCAG-Grundlagen, Touch-Ziele).

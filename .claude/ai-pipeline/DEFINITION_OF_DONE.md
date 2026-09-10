@@ -8,7 +8,7 @@ Ein Ticket ist **fertig**, wenn:
 ## A — Verifikation
 1. **Scope-Treue:** exakt der Ticket-Schritt umgesetzt — keine ungefragten Extras, kein Scope-Creep.
 2. **Akzeptanzkriterien erfüllt & nachweislich geprüft** (nicht angenommen).
-3. **Mindestens 1 Acceptance Test** grün; Happy Path + alle als Subtasks identifizierten **Edge-/Error-Fälle** abgedeckt.
+3. **Mindestens 1 Acceptance Test** grün; Happy Path + alle als Subtasks identifizierten **Edge-/Error-Fälle** abgedeckt. **Beide Ebenen Pflicht:** Backend-API **und** Frontend (Component **+ Playwright-E2E**). Tests **isoliert** (kein geteilter State → `@BeforeEach`-Reset), **echte Werte** statt nur Status/`notNull`. *(→ `LESSONS-LEARNED.md` C)*
 4. **Baut & Start-Nachweis (Pflicht):** kompiliert sauber, keine kaputten Imports — **und nach Abschluss der Änderungen werden Backend UND Frontend jeweils einmal real erfolgreich gestartet** (Backend bootet fehlerfrei / Port erreichbar; Frontend-Dev-Server bzw. Build läuft und die App lädt). Nicht nur „kompiliert", sondern nachweislich hochgefahren.
 
 ## B — Qualität / Anti-Slop
@@ -24,7 +24,7 @@ Ein Ticket ist **fertig**, wenn:
 12. **Keine Secrets** im Code; nötige Doku vorhanden.
 
 ## D — Delivery-Scans (bei Abnahme/Review)
-13. **Dependency-Scan** ohne kritische Findings.
+13. **Dependency-Scan** ohne kritische Findings — **Platform/Framework auf aktueller Version** (kein veraltetes Pinning; veraltetes Quarkus 3.15.1 erzeugte 63 CVEs → Upgrade nötig). *(→ `LESSONS-LEARNED.md` D/E)*
 14. **Container-Scan** ohne kritische Findings.
 15. **SonarQube Quality-Gate** grün.
 16. Weitere projektspezifische Scans grün.

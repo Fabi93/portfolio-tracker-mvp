@@ -57,6 +57,15 @@ Im **Refinement** entsteht **Planung, kein Code**. Code entsteht erst in der **D
 - **Gemeinsamer Kontrakt:** `openapi.yaml` ist **bindend**; BE + FE implementieren **parallel** dagegen.
 - **Clean Code / Clean Architecture** (R. C. Martin).
 - **Eigene Tests:** Unit + Integration (**Testcontainers** bei DB/Infra) + API bzw. **Playwright**-E2E.
+  **Beide Ebenen** (Backend **und** Frontend) sind Pflicht — der Frontend-Teil wird sonst übersehen.
 - **Echte Werte:** Scan-/Testzahlen sind **gemessen, nie erfunden**; nicht lauffähig → „nicht ausgeführt: Grund".
 - **Genau 2 Review-Iterationen** — kein Endlos-Polishing; Rest wird **dokumentiert**.
 - **Sicherheit der Aktionen:** **kein Merge ohne Menschen**; **keine Secrets** in Commits/PR-Text.
+
+## 8 · Toolchain-Preflight & Enforcement
+- **Vor dem Bauen die Toolchain prüfen** (JDK/JAVA_HOME, Maven-Version, Node/npm-Eigenheiten,
+  Compiler-Plugin) — die häufigsten Zeitfresser sind Umgebungsfehler, nicht der Code.
+- **Dependency-Freshness:** kein veraltetes Platform-Pinning; Dependency-Scan **früh** fahren.
+- **Diese Constitution ist Leitplanke, kein Enforcement.** Was zuverlässig gelten muss, gehört in
+  **CI** (die Tests/Scans automatisch erzwingt) oder in **Hooks** — nicht in guten Willen.
+- Konkrete Kommandos & Stolpersteine aus echten Läufen: **`ai-pipeline/LESSONS-LEARNED.md`**.
