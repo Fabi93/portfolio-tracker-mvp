@@ -8,6 +8,12 @@ frontend/dist/
 frontend/.vite/
 npm-debug.log*
 
+# --- Playwright ---
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+frontend/.playwright/
+
 # --- IDE / OS ---
 .idea/
 *.iml
